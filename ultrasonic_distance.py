@@ -44,9 +44,9 @@ def distance():
 
 	return abs(distance) 
 
-def sendData():
+def sendData(distance):
 	postdata = {
-		'Distance': distance()
+		'Distance': distance
 	}
 
 	req = urllib2.Request(url)
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 		while True:
 			dist = distance()
 			print("Measured distance = %.1f cm" %dist)
-			sendData()
+			sendData(dist)
 			#time.sleep(1)
 
 	except KeyboardInterrupt:
